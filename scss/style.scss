@@ -1,0 +1,233 @@
+@import "variables";
+@import "mixins";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  margin: 2% 9% 0% 9%;
+  display: flex;
+  flex-direction: column;
+  height: 95vh;
+}
+
+.dark-mode-body{
+  background: linear-gradient(to top,hsl(230, 17%, 14%) 70%,  hsl(232, 19%, 15%) 30%), hsl(230, 17%, 14%); 	
+  background-repeat: no-repeat, repeat-y;
+  @include text-characteristics(hsl(0, 0%, 100%));
+}
+
+.light-mode-body{
+  background: linear-gradient(to top,hsl(0, 0%, 100%) 70%, hsl(225, 100%, 98%) 30%), hsl(0, 0%, 100%);
+  background-repeat: no-repeat, repeat-y;
+  @include text-characteristics(hsl(230, 17%, 14%));
+}
+
+.main__heading__first-line{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main__heading__section-name{
+  font-weight: bold;
+  font-size: 4vmin;
+}
+
+.main__heading__dark-mode{
+  padding-right: 12%;
+  display: flex;
+  align-items: center;
+}
+
+.today-overview__header{
+  font-weight: bold;
+  font-size: 4vmin;
+  padding-top: 3%;
+  padding-left: 8%;
+
+  &.light-mode{
+    color: hsl(228, 12%, 44%);
+  }
+}
+
+.main__heading{
+  padding-bottom: 3%;
+  padding-left: 8%;
+}
+
+.main__heading__dark-mode__switch__toggle{
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 20px;
+  background: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  &::after{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: 2.5px;
+    top: 2.04px;
+    width: 15px;
+    height: 15px;
+    background-color: $card-background-dark;
+    border-radius: 10px;
+    -webkit-transition: .4s;
+    transition: .4s;
+
+    transform: translateX(0);
+  }
+
+  &:checked {
+    background:hsl(230, 22%, 74%);
+
+    &:hover{
+      &.light-mode{
+        background: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+      }
+    }
+
+    &::after{
+      transform: translateX(calc(100% + 60%));
+      background-color: #fff; 
+    }
+  }
+}
+
+.social-media-card__profile, .overview-card__text, 
+.main__followers, .main__heading__dark-mode__text {
+  
+  &:not(.light-mode){
+    @include text-characteristics(hsl(228, 34%, 66%));
+  }
+  &.light-mode{
+    @include text-characteristics(hsl(228, 12%, 44%));
+  }
+}
+
+.today-overview__section{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.social-media{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.social-media-card__social-network{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.social-media-card__numbers{
+  font-weight: 700;
+  font-size: 3.5em;
+
+}
+
+.social-media-card__followers{
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+
+  &:not(.light-mode){
+    @include text-characteristics(hsl(228, 34%, 66%));
+  }
+  &.light-mode{
+    @include text-characteristics(hsl(228, 12%, 44%));
+  }
+}
+
+.social-media-card_facebook{
+  @include social-media-card(hsl(195, 100%, 50%));
+}
+
+.social-media-card_twitter{
+  @include social-media-card(hsl(203, 89%, 53%));
+}
+
+.social-media-card_instagram{
+  @include social-media-card(hsl(210, 78%, 56%), true);
+}
+
+.social-media-card_youtube{
+  @include social-media-card(hsl(348, 97%, 39%));
+}
+
+.today-overview__section__overview-card{
+  
+  &:not(.light-mode){
+    background-color: $card-background-dark;
+  }
+  &.light-mode{
+    background-color: $card-background-light;
+  }
+  border-radius: 5px;
+  padding: 2%;
+  width: $card-width;
+  min-width: 160px;
+  margin-right: 2%; 
+  margin-top: 1%;
+  margin-bottom: 1%;
+
+  &:hover{
+    &:not(.light-mode){
+      background-color: lighten($card-background-dark, 5%);
+    }
+    &.light-mode{
+      background-color: darken($card-background-light, 5%);
+    }
+    cursor: pointer;
+  }
+}
+
+.social-media-card__stats,
+.today-overview__section__overview-card__stats{
+  @include stats;
+}
+
+.social-media-card__stats{
+  margin-top: 10%;
+}
+
+.social-media-card__followers-up, .overview-card__persent-up{
+  @include text-characteristics(hsl(163, 72%, 41%));
+}
+
+.social-media-card__followers-down, .overview-card__persent-down{
+  @include text-characteristics(hsl(356, 69%, 56%));
+}
+
+.today-overview__section__overview-card__first-line, 
+.today-overview__section__overview-card__second-line{
+  @include stats(space-between);
+}
+
+.overview-card__numbers{
+  font-size: 2.2em;
+}
+
+.footer {
+  height: 5vh;
+  font-size: 11px; 
+  text-align: center; 
+}
+
+.footer a {
+  color: hsl(228, 45%, 44%); 
+}

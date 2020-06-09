@@ -1,0 +1,71 @@
+@mixin text-characteristics ($color, $font-size:2.24vmin){
+  color: $color;
+  font-size: $font-size;
+}
+
+@mixin social-media-card ($top-border-color, $gradient:false) {
+  
+  &:not(.light-mode){
+    background-color: $card-background-dark;
+  }
+  &.light-mode{
+    background-color: $card-background-light;
+  }
+
+  text-align: center;
+  width: $card-width;
+  min-width: 160px;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  padding: 2%;
+  border-top: $border solid;
+  border-radius: 5px;
+  
+  @if $gradient == false {
+    border-top-color: $top-border-color;
+  }
+  @else{
+    border-top: $border solid transparent;
+    &:not(.light-mode){
+      @include instagram($card-background-dark);
+    }
+    &.light-mode{
+      @include instagram($card-background-light);
+    }
+    
+  }
+
+  &:hover{
+    cursor: pointer;
+
+    @if $gradient == false {
+      &:not(.light-mode){
+        background: lighten($card-background-dark, 5%);
+      }
+      &.light-mode{
+        background: darken($card-background-light, 5%);
+      }
+    }
+    @else{
+      &:not(.light-mode){
+        @include instagram(lighten($card-background-dark, 5%));
+      }
+      &.light-mode{
+        @include instagram(darken($card-background-light, 5%));
+      }
+    }
+  }
+}
+
+@mixin stats($justify-content:center) {
+  display: flex;
+  align-items: center;
+  padding-top: 2%;
+  justify-content: $justify-content;
+}
+
+@mixin instagram($color) {
+  background: linear-gradient($color, $color), $gradient-color;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+}
