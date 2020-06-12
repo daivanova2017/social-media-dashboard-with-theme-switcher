@@ -1,0 +1,41 @@
+@import "variables";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  font-size: $main-font-size;
+}
+
+body{
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+header{
+  margin-bottom: 30px;
+  padding: 50px 20px 0;
+  
+  &:not(.light-mode){
+    background-color: $top-background-dark;
+  }
+  &.light-mode{
+    background-color: $top-background-light;
+  }
+}
+
+.footer {
+  font-size: 1rem; 
+  text-align: center; 
+  padding-top: 30px;
+
+  position: relative;
+  top: -50px;
+}
+
+.footer a {
+  color: hsl(228, 45%, 44%); 
+}

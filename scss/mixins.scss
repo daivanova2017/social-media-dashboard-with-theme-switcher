@@ -1,6 +1,7 @@
-@mixin text-characteristics ($color, $font-size:2.24vmin){
+@mixin text-characteristics ($color, $font-weight:400, $font-size:1rem){
   color: $color;
   font-size: $font-size;
+  font-weight: $font-weight;
 }
 
 @mixin social-media-card ($top-border-color, $gradient:false) {
@@ -15,11 +16,37 @@
   text-align: center;
   width: $card-width;
   min-width: 160px;
-  margin-right: 2%;
-  margin-bottom: 2%;
-  padding: 2%;
-  border-top: $border solid;
+  padding: 20px 30px;
+  margin-bottom: 30px;
+
+  border-color: $border;
+  border-top-width: 4px;
+  border-top-style: solid;
   border-radius: 5px;
+
+  @media all and (min-width: 1118px){
+    &:not(:first-child){
+      margin-left: 30px;
+    }
+  }
+
+  @media all and (max-width: 1117px) and (min-width: 1010px){  
+    &:not(:first-child){
+      margin-left: 30px;
+    }
+
+    &:nth-child(3){
+      margin-left: 0;
+    }
+
+    flex-basis: 400px;
+  }
+
+  @media all and (max-width: 1009px){  
+    margin-left: 0;
+
+    flex-basis: 1000px;
+  }
   
   @if $gradient == false {
     border-top-color: $top-border-color;
@@ -60,7 +87,6 @@
 @mixin stats($justify-content:center) {
   display: flex;
   align-items: center;
-  padding-top: 2%;
   justify-content: $justify-content;
 }
 

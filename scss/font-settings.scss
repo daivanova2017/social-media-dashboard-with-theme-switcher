@@ -1,0 +1,59 @@
+@import "mixins";
+@import "variables";
+
+.dark-mode-body{
+  @include text-characteristics($headings-color-dark);
+}
+
+.light-mode-body{
+  @include text-characteristics($headings-color-light);
+}
+
+.main__heading__section-name{
+  font-size: 1.63rem;
+}
+
+.social-media-card__profile, .overview-card__text, 
+.main__followers, .main__heading__dark-mode__text {
+  
+  &:not(.light-mode){
+    @include text-characteristics($text-color-dark, bold);
+  }
+  &.light-mode{
+    @include text-characteristics($text-color-light, bold);
+  }
+}
+
+.today-overview__header{
+  font-size: 1.63rem;
+}
+
+.social-media-card__numbers{
+  font-weight: bold;
+  font-size: 3.5rem;
+}
+
+.social-media-card__followers{
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+
+  &:not(.light-mode){
+    @include text-characteristics($text-color-dark);
+  }
+  &.light-mode{
+    @include text-characteristics($text-color-light);
+  }
+}
+
+.social-media-card__followers-up, .overview-card__persent-up{
+  @include text-characteristics($up-color, bold);
+}
+
+.social-media-card__followers-down, .overview-card__persent-down{
+  @include text-characteristics($down-color, bold);
+}
+
+.overview-card__numbers{
+  font-weight: bold;
+  font-size: 2rem;
+}

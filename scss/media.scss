@@ -1,0 +1,73 @@
+.main__heading, .social-media{
+  @media screen and (min-width: 1118px){
+    max-width: 1118px;
+    margin: 0 auto;
+  }
+
+  @media all and (max-width: 1117px) and (min-width: 1010px){  
+    max-width: 1010px;
+    margin: 0 auto;
+  }
+}
+
+.main__heading__dark-mode{
+  @media all and (max-width: 1009px){  
+    position: initial;
+    justify-content: space-between;
+  }
+}
+
+.today-overview{
+  @media screen and (min-width: 1118px){
+    max-width: 1118px;
+    margin: 0 auto;
+  }
+
+  @media all and (max-width: 1117px) and (min-width: 1010px){  
+    max-width: 1010px;
+    margin: 0 auto;
+  }
+}
+
+.main__followers{
+  @media all and (max-width: 1009px){
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    
+    &:not(.light-mode){
+      border-bottom: 1px $text-color-dark solid;
+    }
+    &.light-mode{
+      border-bottom: 1px $text-color-light solid;
+    }  
+  }
+}
+
+.today-overview__section__overview-card{
+  @media screen and (min-width: 1118px){
+    &:not(:first-child){
+      margin-left: 30px;
+    }
+
+    &:nth-child(5){
+      margin-left: 0;
+    }
+  }
+
+  @media all and (max-width: 1117px) and (min-width: 1010px){  
+    &:not(:first-child){
+      margin-left: 30px;
+    }
+
+    &:nth-child(2n+1){
+      margin-left: 0;
+    }
+
+    flex-basis: 400px;
+  }
+
+  @media all and (max-width: 1009px){  
+    margin-left: 0;
+    flex-basis: 1000px;
+  }
+}

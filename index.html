@@ -3,29 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="preload">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="scss/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <title>Frontend Mentor | Social media dashboard with theme switcher</title>
 </head>
 <body class="dark-mode-body">
   <main>
-  <div class="main__heading">
-    <div class="main__heading__first-line">
-      <span class="main__heading__section-name">Social Media Dashboard</span>
-      <div class="main__heading__dark-mode">
-        <span class="main__heading__dark-mode__text">Dark Mode</span>
-        <input class="main__heading__dark-mode__switch__toggle" type="checkbox">
-      </div>  
-    </div>
-    <span class="main__followers">Total Followers: 23,004</span><br>
-  </div>
-
+    <header>
+      <div class="main__heading">
+        <h1 class="main__heading__section-name">Social Media Dashboard</h1>
+        <h2 class="main__followers">Total Followers: 23,004</h2>
+        <label class="main__heading__dark-mode">
+          <span class="main__heading__dark-mode__text">Dark Mode</span>
+          <input class="main__heading__dark-mode__switch__toggle" type="checkbox">
+        </label> 
+      </div>
+    </header>
   <section class="social-media">
     <div class="social-media-card_facebook">
       <div class="social-media-card__social-network">
         <img src="images/icon-facebook.svg" alt="Facebook" />
-        <p class="social-media-card__profile">@nathanf</p>
+        <span class="social-media-card__profile">@nathanf</p>
       </div>
       <p class="social-media-card__numbers">1987</p>
       <p class="social-media-card__followers">Followers</p>
@@ -76,7 +75,7 @@
   </section>
 
   <section class="today-overview">
-    <h2 class="today-overview__header">Overview - Today</h2>
+    <h1 class="today-overview__header">Overview - Today</h1>
 
     <section class="today-overview__section">
       <div class="today-overview__section__overview-card">
@@ -250,10 +249,10 @@
   </section>
   </main>
   
-  <div class="footer">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+  <footer class="footer">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.<br> 
     Coded by <a href="https://www.frontendmentor.io/profile/daivanova2017">Darya Ivanova</a>.
-  </div>
+  </footer>
 </body>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="./index.js"></script>
