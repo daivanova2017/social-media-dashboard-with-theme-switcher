@@ -43,6 +43,35 @@
   }
 }
 
+.social-media-card_facebook,
+.social-media-card_twitter,
+.social-media-card_instagram,
+.social-media-card_youtube{
+  @media all and (min-width: 1118px){
+    &:not(:first-child){
+      margin-left: 30px;
+    }
+  }
+  
+  @media all and (max-width: 1117px) and (min-width: 1010px){  
+    &:not(:first-child){
+      margin-left: 30px;
+    }
+  
+    &:nth-child(3){
+      margin-left: 0;
+    }
+  
+    flex-basis: 400px;
+  }
+  
+  @media all and (max-width: 1009px){  
+    margin-left: 0;
+  
+    flex-basis: 1000px;
+  }
+}
+
 .today-overview__section__overview-card{
   @media screen and (min-width: 1118px){
     &:not(:first-child){

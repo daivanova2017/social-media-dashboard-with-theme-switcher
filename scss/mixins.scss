@@ -23,30 +23,6 @@
   border-top-width: 4px;
   border-top-style: solid;
   border-radius: 5px;
-
-  @media all and (min-width: 1118px){
-    &:not(:first-child){
-      margin-left: 30px;
-    }
-  }
-
-  @media all and (max-width: 1117px) and (min-width: 1010px){  
-    &:not(:first-child){
-      margin-left: 30px;
-    }
-
-    &:nth-child(3){
-      margin-left: 0;
-    }
-
-    flex-basis: 400px;
-  }
-
-  @media all and (max-width: 1009px){  
-    margin-left: 0;
-
-    flex-basis: 1000px;
-  }
   
   @if $gradient == false {
     border-top-color: $top-border-color;
@@ -91,7 +67,7 @@
 }
 
 @mixin instagram($color) {
-  background: linear-gradient($color, $color), $gradient-color;
+  background-image: linear-gradient($color, $color), $gradient-color;
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
 }
